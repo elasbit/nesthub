@@ -1,7 +1,15 @@
 # nesthub
-Http connectors for Nest Client
+Http connectors for Elasticsearch.Net Client
 
 
+HttpClientConnectionAWS
+
+If you are migrating you Elasticsearch cluster to the new Amazon Elasticsearch Service, you will notice that if you secure your cluster, then you wil need to sing all the http rest request.
+
+Unless you use the AWS SDK, the signing process can be tricky. This conector encapsulate the proccess of signing the request for Amazon Elasticsearch Service.
+
+
+Usage:
 
 When using Nest, simply pass an instance of "HttpClientConnectionAWS" when creating an elasticsearh client.
 
@@ -13,4 +21,4 @@ var elasticSettings = new ConnectionSettings(new System.Uri("EsUrl"));
 
 IConnection elasticConnection = new HttpClientConnectionAWS( elasticSettings, "AccessKey", "SecretKey", "Region" );
 
-var client new ElasticClient(elasticSettings, elasticConnection);
+var client = new ElasticClient(elasticSettings, elasticConnection);
